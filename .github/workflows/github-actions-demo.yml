@@ -1,7 +1,6 @@
 name: My second Github Workflow
 on: [push]
 jobs:
-
 	runs-on: ubuntu-latest
 	steps:
 		- run: echo "Checking python version"

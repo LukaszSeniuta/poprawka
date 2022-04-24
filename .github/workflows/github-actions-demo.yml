@@ -11,6 +11,6 @@ jobs:
       runs-on: ubuntu-latest
       steps:
       - run: pip install -U pytest
-      - run: find . -name '*.py' exec pytest {} \;
+      - run: find . -name '*.py' -exec pytest {} \;
       - run: find . -name 'Dockerfile' -exec docker build --tag test-app . {} \;
       - uses: actions/checkout@v3

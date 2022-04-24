@@ -1,6 +1,6 @@
-a = 7
-b =10
+def func(x):
+    return x + 1
 
-wynik = a + b
 
-print(wynik)
+def test_answer():
+    assert func(3) == 5

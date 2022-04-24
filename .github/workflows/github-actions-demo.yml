@@ -4,4 +4,14 @@ jobs:
    Test-github-actions:
       runs-on: ubuntu-latest
       steps:
-      - run: echo "Checking python version"
+         - run: echo "Checking python version"
+         - run: python --version
+         - uses: actions/checkout@v3
+   Test2:
+      runs-on: ubuntu-latest
+      steps:
+	      - run: pip install -U pytest
+	      - run: pytest --version
+	      - run: find . -name '*.py' exec pytest {} \;
+	      - run: find . -name 'Dockerfile' -exec docker build --tag test-app . {} \;
+	      - uses: actions/checkout@v3
